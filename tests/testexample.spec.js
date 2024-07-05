@@ -12,4 +12,8 @@ test('Fill out the test registration form', async ({ page }) => {
     await expect(page.getByText('Name')).toBeVisible();
     await page.getByPlaceholder('First Name').fill('Firstname');
     await page.getByPlaceholder('Last Name').fill('Lastname');
+
+    // Input Email
+    await expect(page.getByText('Email')).toBeVisible();
+    await page.getByPlaceholder('name@example.com').fill('flname@email.test');
 });
