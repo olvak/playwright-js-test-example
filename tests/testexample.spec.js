@@ -7,4 +7,13 @@ test('Fill out the test registration form', async ({ page }) => {
 
     // Expect a title "to contain" a substring.
     await expect(page).toHaveTitle(/DEMOQA/);
+
+    // Input First and Last name
+    await expect(page.getByText('Name')).toBeVisible();
+    await page.getByPlaceholder('First Name').fill('Firstname');
+    await page.getByPlaceholder('Last Name').fill('Lastname');
+
+    // Input Email
+    await expect(page.getByText('Email')).toBeVisible();
+    await page.getByPlaceholder('name@example.com').fill('flname@email.test');
 });
