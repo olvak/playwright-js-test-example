@@ -16,4 +16,12 @@ test('Fill out the test registration form', async ({ page }) => {
     // Input Email
     await expect(page.getByText('Email')).toBeVisible();
     await page.getByPlaceholder('name@example.com').fill('flname@email.test');
+
+    // Choose Gender
+    await expect(page.getByText('Gender')).toBeVisible();
+    await page.getByText('Female').click();
+
+    // Input Phone
+    await expect(page.getByText('Mobile')).toBeVisible();
+    await page.getByPlaceholder('Mobile Number').fill('0123456789');
 });
