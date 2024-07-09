@@ -43,4 +43,9 @@ test('Fill out the test registration form', async ({ page }) => {
     await page.locator('[id="subjectsContainer"]').click();
     await page.keyboard.type('Arts');
     await page.keyboard.press('Enter');
+
+    // Check Hobbies
+    await expect(page.getByText('Hobbies')).toBeVisible();
+    await page.locator('label[for="hobbies-checkbox-2"]').click();
+    await page.locator('label[for="hobbies-checkbox-3"]').click();
 });
