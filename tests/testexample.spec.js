@@ -48,4 +48,12 @@ test('Fill out the test registration form', async ({ page }) => {
     await expect(page.getByText('Hobbies')).toBeVisible();
     await page.locator('label[for="hobbies-checkbox-2"]').click();
     await page.locator('label[for="hobbies-checkbox-3"]').click();
+
+    // Upload the Picture
+    await expect(page.getByText('Select picture')).toBeVisible();
+    await page.locator('input[id="uploadPicture"]').setInputFiles('./tests/fixtures/testpicture.jpeg');
+
+    // Input Address
+    await expect(page.getByText('Current Address')).toBeVisible();
+    await page.getByPlaceholder('Current Address').fill('123 Street, 45 Apartment');
 });
