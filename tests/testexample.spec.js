@@ -51,6 +51,7 @@ test('Fill out the test registration form', async ({ page }) => {
 
     // Upload the Picture
     await expect(page.getByText('Select picture')).toBeVisible();
+    await page.locator('input[id="uploadPicture"]').click();
     await page.locator('input[id="uploadPicture"]').setInputFiles('./tests/fixtures/testpicture.jpeg');
 
     // Input Address
