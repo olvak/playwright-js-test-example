@@ -57,4 +57,11 @@ test('Fill out the test registration form', async ({ page }) => {
     // Input Address
     await expect(page.getByText('Current Address')).toBeVisible();
     await page.getByPlaceholder('Current Address').fill('123 Street, 45 Apartment');
+
+    // Select State and City
+    await expect(page.getByText('State and City')).toBeVisible();
+    await page.locator('div[id="state"]').click();
+    await page.getByText('Haryana').click();
+    await page.locator('div[id="city"]').click();
+    await page.getByText('Panipat').click();
 });
