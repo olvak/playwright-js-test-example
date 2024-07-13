@@ -64,4 +64,9 @@ test('Fill out the test registration form', async ({ page }) => {
     await page.getByText('Haryana').click();
     await page.locator('div[id="city"]').click();
     await page.getByText('Panipat').click();
+
+    // Send form
+    await expect(page.getByText('Submit')).toBeVisible();
+    await page.locator('button[id="submit"]').click();
+    await expect(page.getByText('Thanks for submitting the form')).toBeVisible();
 });
