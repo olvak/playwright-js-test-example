@@ -69,4 +69,7 @@ test('Fill out the test registration form', async ({ page }) => {
     await expect(page.getByText('Submit')).toBeVisible();
     await page.locator('button[id="submit"]').click();
     await expect(page.getByText('Thanks for submitting the form')).toBeVisible();
+
+    // Take a screenshot of the form
+    await page.locator('div[class="modal-dialog modal-lg"]').screenshot({ path: 'formscreenshot.png' });
 });
