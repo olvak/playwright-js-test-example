@@ -72,4 +72,7 @@ test('Fill out the test registration form', async ({ page }) => {
 
     // Take a screenshot of the form
     await page.locator('div[class="modal-dialog modal-lg"]').screenshot({ path: 'formscreenshot.png' });
+    
+    // Exit modal form
+    await page.keyboard.press('Escape');
 });
